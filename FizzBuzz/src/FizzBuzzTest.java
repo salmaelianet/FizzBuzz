@@ -22,6 +22,12 @@ public class FizzBuzzTest {
 		assertEquals("Buzz", fb.generar(5));
 	}
 	
+	@Test
+	public void generarFizzBuzz() {
+		FizzBuzz fb= new FizzBuzz();
+		assertEquals("FizzBuzz", fb.generar(15));
+	}
+	
 
 	
 }
