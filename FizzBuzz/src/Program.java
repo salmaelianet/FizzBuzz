@@ -11,23 +11,24 @@ public class Program {
 class FizzBuzz{
 	
 	public void generaNumHasta(int limite) {
-		for(int i = 0; i < limite; i++)
+		for(int numero = 0; numero < limite; numero++)
 		{
-			generar(i);
+			generar(numero);
         }
 		
 	}
 	
 	public String generar(int numero) {
-		if (numero % 3 == 0 && numero % 5 == 0)
+		
+		if (esFizzBuzz(numero))
 		{
 			return "FizzBuzz";                    
 		}
-		else if(numero % 3 == 0)
+		else if(esFizz(numero))
 		{
 			return "Fizz";
 		}
-		else if(numero % 5 == 0)
+		else if(esBuzz(numero))
 		{
 			return "Buzz";
 		}
@@ -35,6 +36,18 @@ class FizzBuzz{
 		{
 			return String.valueOf(numero);
 		}
+	}
+	
+	public boolean esFizzBuzz(int numero){
+		return (esFizz(numero) && esBuzz(numero));
+	}
+	
+	public boolean esFizz(int numero){
+		return (numero % 3 == 0);	
+	}
+	
+	public boolean esBuzz(int numero){
+		return (numero % 5 == 0);
 	}
 		
 }
